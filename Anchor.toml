@@ -1,0 +1,19 @@
+skip_local_validator = true
+
+[toolchain]
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+confidential_transfers = "Ejfss9ECV2SVzSej28DDkMybZd9sEcgjQXqgXHdx9KK"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "bun run test:ts"
+
+[hooks]
