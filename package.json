@@ -1,8 +1,9 @@
 {
   "license": "ISC",
   "scripts": {
-    "test": "anchor build && bun run test:ts",
-    "test:ts": "NODE_OPTIONS=--no-experimental-strip-types ts-mocha --type-check -p ./tsconfig.json -t 1000000 'tests/**/*.ts'"
+    "test": "anchor build && bun run test:ts && bun run test:rust",
+    "test:ts": "NODE_OPTIONS=--no-experimental-strip-types ts-mocha --type-check -p ./tsconfig.json -t 1000000 'tests/**/*.ts'",
+    "test:rust": "cargo test -p confidential_transfers --test confidential"
   },
   "dependencies": {
     "@anchor-lang/core": "1.2.0"
